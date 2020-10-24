@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "potaru-334eb"
+    "portal-16": "portal-16",
+    "default": "portal-16"
   }
 }
