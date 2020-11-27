@@ -11,5 +11,6 @@ function slist_rand() {
     document.getElementById("sname").innerHTML = s['name']
     document.getElementById("spic").src = s['pic']
     btn.disabled = false
+    document.getElementById("re").style.display = "block"
   })
 }
