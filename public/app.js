@@ -1,7 +1,15 @@
 console.log(firebase)
 
+function slist_rand() {
+  var btn = document.getElementById("rand_btn")
+  btn.disabled = true
 
-firebase.database().ref('/slist').once('value').then((snapshot) => {
-  console.log(snapshot.val()['4']['pic'])
-  document.getElementById("propic").src = snapshot.val()['4']['pic']
-});
+  smax = 4 //max stars
+  let rn = Math.floor((Math.random() * smax) + 1)
+  firebase.database().ref('/slist/'+rn.toString()).once('value').then((snapshot) => {
+    let s = snapshot.val()
+    document.getElementById("sname").innerHTML = s['name']
+    document.getElementById("spic").src = s['pic']
+    btn.disabled = false
+  })
+}
